@@ -1,11 +1,11 @@
 'use client';
 
-interface MenuitemProps {
+interface MenuItemProps {
     onClick: () => void;
     label: string;
 }
 
-const MenuItem: React.FC<MenuitemProps> = ({
+const MenuItem: React.FC<MenuItemProps> = ({
     onClick,
     label
 }) => {
