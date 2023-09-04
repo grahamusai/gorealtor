@@ -13,7 +13,7 @@ import {
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import Modal from './Modals';
 import Heading from '../Heading';
-import Input from '../inputs/input';
+import Input from '../inputs/Input';
 import { toast } from  'react-hot-toast';
 import Button from '../Button';
 
@@ -51,20 +51,12 @@ const RegisterModal = () => {
     }
 
     const bodyContent = (
-        <div className='flex flex-col gap-4'>
-            < Heading 
+        <div className="flex flex-col gap-4">
+            <Heading
                 title="Welcome to Gorealtor"
                 subtitle="Create an account!"
             />
-            <input 
-                id="name"
-                label="Name"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-            <input 
+            <Input
                 id="email"
                 label="Email"
                 disabled={isLoading}
@@ -72,7 +64,15 @@ const RegisterModal = () => {
                 errors={errors}
                 required
             />
-            <input 
+            <Input
+                id="name"
+                label="Name"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input
                 id="password"
                 label="Password"
                 type="password"
@@ -81,7 +81,7 @@ const RegisterModal = () => {
                 errors={errors}
                 required
             />
-        </div>
+    </div>
     );
 
     const footerContent = (
@@ -114,12 +114,14 @@ const RegisterModal = () => {
     
  return (
     <Modal
-        disabled={isLoading}
-        isOpen={registerModal.isOpen}
-        title="Register"
-        actionLabel="Continue"
-        onClose={registerModal.onClose}
-        onSubmit={handleSubmit(onSubmit)}
+    disabled={isLoading}
+    isOpen={registerModal.isOpen}
+    title="Register"
+    actionLabel="Continue"
+    onClose={registerModal.onClose}
+    onSubmit={handleSubmit(onSubmit)}
+    body={bodyContent}
+    footer={footerContent}
     />
  );
 }
