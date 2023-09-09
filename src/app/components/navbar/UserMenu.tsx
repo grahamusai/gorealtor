@@ -4,9 +4,11 @@ import Avator from "../Avator";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,7 +20,7 @@ const UserMenu = () => {
         className="flex flex-row items-center gap-3"
       >
         <div className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-nuetral-100 transition cursor-pointer">
-          Gorealtor you home
+          Limaz you home
         </div>
         <div className="p-4 md:px-2 md:py-1 border-[1px] border-nuetral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition">
           <AiOutlineMenu />
@@ -43,7 +45,7 @@ const UserMenu = () => {
         >
           <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem onClick={() => {}} label="Login" />
+              <MenuItem onClick={loginModal.onOpen} label="Login" />
               <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
             </>
           </div>
