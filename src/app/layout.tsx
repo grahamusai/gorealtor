@@ -1,11 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Navbar from './components/navbar/Navbar';
 import Header from './components/header/Header';
 import ClientOnly from './components/ClientOnly';
-import RegisterModal from './components/modals/RegisterModal';
-import LoginModal from './components/modals/RegisterModal';
 import ToasterProvider from './providers/ToasterProvider';
 import Image from 'next/image';
 import Footer from './components/footer/Footer'
@@ -26,8 +23,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientOnly>
           <ToasterProvider />
-          <LoginModal  />
-          <RegisterModal />
           <Header />
           
         </ClientOnly>
