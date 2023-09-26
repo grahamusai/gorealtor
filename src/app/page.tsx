@@ -1,5 +1,9 @@
+import HeroSection from "./components/hero_section";
+import { Button } from "./exportfile";
 export default function Home() {
   return (
-    <div className="text-rose-500 text-2xl">Hello GoRealtor!</div>
-  )
+    <main>
+      <HeroSection />
+    </main>
+  );
 }

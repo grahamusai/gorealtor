@@ -1,7 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "./exportfile";
+import TopNav from "./components/topnav";
+import MobileNav from "./components/mobilenav";
 
 export const metadata: Metadata = {
   title: "gorealtor",
@@ -15,7 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-primary `}>{children}</body>
+      <ThemeProvider>
+        <body className="text-dark container mx-auto">
+          <TopNav />
+          <MobileNav />
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
