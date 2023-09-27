@@ -1,4 +1,4 @@
-import HeroSection from "./components/hero_section";
+import HeroSection from "./sections/hero";
 import { Button } from "./exportfile";
 export default function Home() {
   return (
